@@ -14,12 +14,28 @@ use microbit::{
 };
 use rtt_target::{rtt_init_print, rprintln};
 use panic_halt as _;
-// use nanorand::{Rng, SeedableRng};
+use nanorand::{Rng, SeedableRng};
 
 
 //  include the life module
-// mod life;
-// use life::*;
+mod life;
+use life::*;
+
+// iterate through the board until
+fn randomize_board(light_matrix: &mut [[u8; 5]; 5]) {
+
+    let mut rng = nanorand::Pcg64::new_seed(31);
+    // https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flat_map
+    for light in light_matrix.iter_mut().flat_map(|r| r.iter_mut()) {
+        let b: bool = rng.generate();
+        rprintln!("generated: {}", b);
+        match b {
+            true => *light = 1u8,
+            false => *light = 0u8
+        }
+
+    }
+}
 
 #[entry]
 fn main() -> ! {
@@ -35,18 +51,24 @@ fn main() -> ! {
 
     let mut b_button = board.buttons.button_b;
 
-
-    let light_it_all = [
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
+    let mut light_matrix = [
+        [0u8, 0u8, 0u8, 0u8, 0u8],
+        [0u8, 0u8, 0u8, 0u8, 0u8],
+        [0u8, 0u8, 0u8, 0u8, 0u8],
+        [0u8, 0u8, 0u8, 0u8, 0u8],
+        [0u8, 0u8, 0u8, 0u8, 0u8],
     ];
 
+    randomize_board(&mut light_matrix);
+
+    rprintln!("{:?}",light_matrix);
+
     loop {
-        // Show light_it_all for 1000ms
-        display.show(&mut timer, light_it_all, 1000);
+        // // Show light_it_all for 1000ms
+        life(&mut light_matrix);
+        
+
+        display.show(&mut timer, light_matrix, 100);
         // clear the display again
         display.clear();
 
