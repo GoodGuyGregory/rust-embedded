@@ -1,0 +1,6 @@
+$ mkdir -p "/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/build/az-f4b8b38209d9bf1f/out/try_track_caller"
+$ cd "/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/build/az-f4b8b38209d9bf1f/out/try_track_caller"
+$ printf '%s' "// try_tra"... > "/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/build/az-f4b8b38209d9bf1f/out/try_track_caller/try_track_caller.rs"
+$ cd "/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/build/az-f4b8b38209d9bf1f/out/try_track_caller" && "rustc" "try_track_caller.rs" "--emit=dep-info,metadata" >& /dev/null
+cargo:rustc-cfg=track_caller
+$ rm -r "/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/build/az-f4b8b38209d9bf1f/out/try_track_caller"

@@ -1,0 +1,11 @@
+/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/deps/libnanorand-c7da57bae181d214.rmeta: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/crypto.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/crypto/chacha.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/entropy.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/gen.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/rand.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/rand/pcg64.rs
+
+/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/deps/nanorand-c7da57bae181d214.d: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/crypto.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/crypto/chacha.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/entropy.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/gen.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/rand.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/rand/pcg64.rs
+
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/lib.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/crypto.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/crypto/chacha.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/entropy.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/gen.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/rand.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nanorand-0.7.0/src/rand/pcg64.rs:

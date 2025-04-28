@@ -1,0 +1,11 @@
+/Users/gregwitt/Github/rust-embedded/homework/homework-1/target/thumbv7em-none-eabihf/release/deps/librtt_target-d6ecdb5e740ba8c1.rmeta: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/debug.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/rtt.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/init.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/print.rs
+
+/Users/gregwitt/Github/rust-embedded/homework/homework-1/target/thumbv7em-none-eabihf/release/deps/librtt_target-d6ecdb5e740ba8c1.rlib: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/debug.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/rtt.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/init.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/print.rs
+
+/Users/gregwitt/Github/rust-embedded/homework/homework-1/target/thumbv7em-none-eabihf/release/deps/rtt_target-d6ecdb5e740ba8c1.d: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/debug.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/rtt.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/init.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/print.rs
+
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/lib.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/debug.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/rtt.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/init.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rtt-target-0.6.1/src/print.rs:

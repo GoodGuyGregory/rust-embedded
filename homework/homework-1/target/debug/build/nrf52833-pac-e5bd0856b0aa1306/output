@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/gregwitt/Github/rust-embedded/homework-1/life/target/debug/build/nrf52833-pac-e5bd0856b0aa1306/out
+cargo:rerun-if-changed=device.x
+cargo:rerun-if-changed=build.rs

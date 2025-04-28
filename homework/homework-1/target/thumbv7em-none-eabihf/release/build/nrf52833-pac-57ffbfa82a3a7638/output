@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/gregwitt/Github/rust-embedded/homework/homework-1/target/thumbv7em-none-eabihf/release/build/nrf52833-pac-57ffbfa82a3a7638/out
+cargo:rerun-if-changed=device.x
+cargo:rerun-if-changed=build.rs

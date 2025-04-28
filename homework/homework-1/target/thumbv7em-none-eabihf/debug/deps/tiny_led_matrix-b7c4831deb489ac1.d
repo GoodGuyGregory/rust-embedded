@@ -1,0 +1,9 @@
+/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/deps/libtiny_led_matrix-b7c4831deb489ac1.rmeta: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/control.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/display.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/timer.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/render.rs
+
+/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/deps/tiny_led_matrix-b7c4831deb489ac1.d: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/control.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/display.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/timer.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/render.rs
+
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/lib.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/control.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/display.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/timer.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tiny-led-matrix-1.0.2/src/render.rs:

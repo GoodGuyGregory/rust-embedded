@@ -1,0 +1,11 @@
+/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/deps/libhalf-d189b95690bf8203.rmeta: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/bfloat.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/bfloat/convert.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/binary16.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/binary16/arch.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/leading_zeros.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/slice.rs
+
+/Users/gregwitt/Github/rust-embedded/homework-1/life/target/thumbv7em-none-eabihf/debug/deps/half-d189b95690bf8203.d: /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/lib.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/bfloat.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/bfloat/convert.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/binary16.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/binary16/arch.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/leading_zeros.rs /Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/slice.rs
+
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/lib.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/bfloat.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/bfloat/convert.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/binary16.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/binary16/arch.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/leading_zeros.rs:
+/Users/gregwitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.6.0/src/slice.rs:
