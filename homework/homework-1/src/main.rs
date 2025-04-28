@@ -13,6 +13,7 @@ use microbit::{
     },
 };
 use rtt_target::{rtt_init_print, rprintln};
+use panic_halt as _;
 // use nanorand::{Rng, SeedableRng};
 
 
