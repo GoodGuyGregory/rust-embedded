@@ -2,7 +2,7 @@
 #![no_std]
 
 use cortex_m_rt::entry;
-use embedded_hal::digital::InputPin;
+use embedded_hal::{digital::InputPin, delay::DelayNs};
 #[rustfmt::skip]
 use microbit::{
     board::{Board},
@@ -50,6 +50,18 @@ fn complement_board(light_matrix: &mut [[u8; 5]; 5]) {
     }
 }
 
+// takes a mutable reference of the matrix:
+// if the method determines any lights are '1' (on)
+// it will return false and there is no need to start the timer.
+fn check_lights_out(light_matrix: &mut [[u8; 5]; 5]) -> bool {
+    for light in light_matrix.iter_mut().flat_map(|r| r.iter_mut()) {
+        if *light == 1u8 {
+            return false;
+        }
+    }
+    true
+}
+
 #[entry]
 fn main() -> ! {
     rtt_init_print!();
@@ -79,8 +91,6 @@ fn main() -> ! {
 
     randomize_board(&mut light_matrix, &mut hw_rng);
 
-    rprintln!("{:?}",light_matrix);
-
     loop {
         // // Show light_it_all for 1000ms
         life(&mut light_matrix);
@@ -109,9 +119,16 @@ fn main() -> ! {
             rprintln!("B button pressed");
             complement_board(&mut light_matrix);
             display.show(&mut timer, light_matrix, 100);
-            // clear the display again
-            display.clear();
+        
         }
+
+        // checks if all of the cells on the display matrix are off.
+        if check_lights_out(&mut light_matrix) {
+            // wait 0.5 seconds then re randomize.
+            timer.delay_ms(500);
+            randomize_board(&mut light_matrix, &mut hw_rng );
+        }
+
         
     }
     
