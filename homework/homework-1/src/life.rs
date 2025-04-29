@@ -1,8 +1,7 @@
 //! Conway's Game of Life implemented on a 5×5 "frame
 //! buffer" of `u8` pixels that can be either 0 or 1.
 
-use core::iter::{Iterator, IntoIterator};
-
+use core::iter::{IntoIterator, Iterator};
 
 /// Return `true` iff the frame buffer contains no 1
 /// pixels.
@@ -30,10 +29,7 @@ pub fn life(fb: &mut [[u8; 5]; 5]) {
                 (next_row, col),
                 (next_row, next_col),
             ];
-            let neighbors = coords
-                .into_iter()
-                .map(|(r, c)| prev[r][c])
-                .sum();
+            let neighbors = coords.into_iter().map(|(r, c)| prev[r][c]).sum();
             #[allow(clippy::manual_range_contains)]
             match (prev[row][col], neighbors) {
                 (1, n) if n < 2 || n > 3 => fb[row][col] = 0,
