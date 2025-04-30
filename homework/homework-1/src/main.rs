@@ -36,11 +36,6 @@ fn complement_board(light_matrix: &mut [[u8; 5]; 5]) {
     }
 }
 
-// Checks if all lights are off
-fn check_lights_out(light_matrix: &[[u8; 5]; 5]) -> bool {
-    light_matrix.iter().flatten().all(|&light| light == 0u8)
-}
-
 #[entry]
 fn main() -> ! {
     rtt_init_print!();
@@ -85,21 +80,18 @@ fn main() -> ! {
 
             display.show(&mut timer, light_matrix, FRAME_DURATION.into());
 
-            for _ in 0..4 {
-                
+            for _ in 0..5 {
                 rprintln!("Step through Complemented Life");
                 life(&mut light_matrix);
 
-                complement_board(&mut light_matrix);
-
                 display.show(&mut timer, light_matrix, FRAME_DURATION.into());
-
             }
         }
         // Check if all lights are out
-        else if check_lights_out(&light_matrix) {
+        else if done(&light_matrix) {
+            rprintln!("Stable State");
             rprintln!("Waiting for Input");
-            timer.delay_ms(FRAME_DURATION.into());
+            timer.delay_ms((500 * FRAME_DURATION).into());
             randomize_board(&mut light_matrix, &mut hw_rng);
         }
 

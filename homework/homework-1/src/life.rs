@@ -5,7 +5,6 @@ use core::iter::{IntoIterator, Iterator};
 
 /// Return `true` iff the frame buffer contains no 1
 /// pixels.
-
 pub fn done(fb: &[[u8; 5]; 5]) -> bool {
     fb == &[[0u8; 5]; 5]
 }
