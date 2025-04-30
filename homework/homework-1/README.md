@@ -198,9 +198,18 @@ randomize_board(&mut light_matrix, &mut hw_rng);
     }
 ```
 
+## How it Went:
+
+I honestly feel like this isn't my best work, I am having a hard time understanding why my loop might not work, and there were several learning curves I faced, I am use to visual programming with loops such as `p5js` and other programming graphics libraries but working directly with hardware has been both rewards to see the efforts become a phyiscal light emitting in front of me, but subtle frustration with myself. 
+
+I am assuming what I have is accurate but I am note 100% confident it will cover all case. I did a few back and forth checks with the TA for validity, and inspection. For testing I did learn that slowing the framerate down helps with debugging. Simply adjusting the loop setting of `const FRAME_DURATION` to something like `1000` helped me debug the messages and offered visual queues as to what might be happening, there were times when I witnessed the `complement_board` return the loops 5 times and then step through the regular game of life, and even get stuck in oscillation states.
+
+I also relied on the `blinky.rs` we worked on in class too. overall I would say this is challenging and fun, but I am not fully confident I have a grasp on the interrupt system and if this fully satisifes the blocking behavior of the Micro controller, other than slowing down the frame rate to test it's blocking capabilities, I can only assume that there is little `Debouncing required` as even if it is troublesome the program still appears to show patterns and exiciting visuals without panics. At the end of the day I would consider this a win. It's hard enough to get the hardware to do what is required but with this attempt I am confident I have learned something new and hope to try harder next time if this sinks my grade in the class.
+
+
 
 ## Documentation 
 
-[Discover Embedded LED Roulette](https://docs.rust-embedded.org/discovery-mb2/08-led-roulette/my-solution.html)
-[Embedded Rust Book](https://docs.rust-embedded.org/book/start/panicking.html)
-[Flat Map](https://doc.rust-lang.org/std/iter/struct.FlatMap.html)
+[Discover Embedded LED Roulette](https://docs.rust-embedded.org/discovery-mb2/08-led-roulette/my-solution.html)  
+[Embedded Rust Book](https://docs.rust-embedded.org/book/start/panicking.html)  
+[Flat Map](https://doc.rust-lang.org/std/iter/struct.FlatMap.html)  
