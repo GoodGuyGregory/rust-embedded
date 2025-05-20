@@ -1,21 +1,17 @@
-
 #![no_std]
 #![no_main]
 
 use cortex_m_rt::entry;
-use embedded_hal::{
-    delay::DelayNs,
-    digital::{ OutputPin},
-};
-use lsm303agr::{AccelMode, AccelScale, AccelOutputDataRate, Lsm303agr};
+use embedded_hal::{delay::DelayNs, digital::OutputPin};
+use lsm303agr::{AccelMode, AccelOutputDataRate, AccelScale, Lsm303agr};
 use microbit::{
     board::Board,
     display::nonblocking::{Display, GreyscaleImage},
     hal::{
-        pac::{self, interrupt, TIMER1, twim0::frequency::FREQUENCY_A},
-        timer::Timer,
-        gpio::Level,
         delay::Delay,
+        gpio::Level,
+        pac::{self, TIMER1, interrupt, twim0::frequency::FREQUENCY_A},
+        timer::Timer,
         twim,
     },
 };
@@ -48,7 +44,6 @@ fn main() -> ! {
 
     sensor.set_accel_scale(AccelScale::G16).unwrap();
 
-
     DISPLAY.init(display);
 
     let mut timer2 = Timer::new(board.TIMER0);
@@ -65,7 +60,7 @@ fn main() -> ! {
         [9, 0, 0, 0, 9],
         [0, 9, 9, 9, 0],
     ]);
-    
+
     let drop_image = GreyscaleImage::new(&[
         [0, 0, 9, 0, 0],
         [0, 0, 9, 0, 0],
@@ -75,15 +70,9 @@ fn main() -> ! {
     ]);
 
     loop {
-        DISPLAY.with_lock(|display| display.show(&drop_image));
-        timer2.delay_ms(1000u32);
-
-        DISPLAY.with_lock(|display| display.clear());
-        timer2.delay_ms(1000u32);
-
         DISPLAY.with_lock(|display| display.show(&happy_image));
-        timer2.delay_ms(1000u32);
-        
+        timer2.delay_ms(100u32);
+
         // determine the accelerometer is falling.
         if sensor.accel_status().unwrap().xyz_new_data() {
             let data = sensor.acceleration().unwrap();
@@ -93,13 +82,18 @@ fn main() -> ! {
                 data.y_mg(),
                 data.z_mg()
             );
+
+            DISPLAY.with_lock(|display| display.clear());
+            timer2.delay_ms(100u32);
+
+            DISPLAY.with_lock(|display| display.show(&drop_image));
+            timer2.delay_ms(100u32);
+
+            speaker.set_high().unwrap();
+            delay.delay_us(500);
+            speaker.set_low().unwrap();
+            delay.delay_us(500);
         }
-
-        speaker.set_high().unwrap();
-        delay.delay_us(1500);
-        speaker.set_low().unwrap();
-        delay.delay_us(1500);
-
     }
 }
 
