@@ -7,19 +7,21 @@ use embedded_hal::{
     delay::DelayNs,
     digital::{ OutputPin},
 };
+use lsm303agr::{AccelMode, AccelScale, AccelOutputDataRate, Lsm303agr};
 use microbit::{
     board::Board,
     display::nonblocking::{Display, GreyscaleImage},
     hal::{
-        pac::{self, interrupt, TIMER1},
+        pac::{self, interrupt, TIMER1, twim0::frequency::FREQUENCY_A},
         timer::Timer,
         gpio::Level,
         delay::Delay,
+        twim,
     },
 };
 
 use panic_rtt_target as _;
-use rtt_target::rtt_init_print;
+use rtt_target::{rprintln, rtt_init_print};
 
 use critical_section_lock_mut::LockMut;
 
@@ -31,9 +33,21 @@ static DISPLAY: LockMut<Display<TIMER1>> = LockMut::new();
 fn main() -> ! {
     rtt_init_print!();
     let mut board = Board::take().unwrap();
+
+    let i2c = { twim::Twim::new(board.TWIM0, board.i2c_internal.into(), FREQUENCY_A::K100) };
+
     let mut delay = Delay::new(board.SYST);
     let mut speaker = board.speaker_pin.into_push_pull_output(Level::Low);
     let display = Display::new(board.TIMER1, board.display_pins);
+
+    let mut sensor = Lsm303agr::new_with_i2c(i2c);
+    sensor.init().unwrap();
+    sensor
+        .set_accel_mode_and_odr(&mut delay, AccelMode::Normal, AccelOutputDataRate::Hz400)
+        .unwrap();
+
+    sensor.set_accel_scale(AccelScale::G16).unwrap();
+
 
     DISPLAY.init(display);
 
@@ -70,12 +84,21 @@ fn main() -> ! {
         DISPLAY.with_lock(|display| display.show(&happy_image));
         timer2.delay_ms(1000u32);
         
+        // determine the accelerometer is falling.
+        if sensor.accel_status().unwrap().xyz_new_data() {
+            let data = sensor.acceleration().unwrap();
+            rprintln!(
+                "Acceleration: x {} y {} z {}",
+                data.x_mg(),
+                data.y_mg(),
+                data.z_mg()
+            );
+        }
 
         speaker.set_high().unwrap();
         delay.delay_us(1500);
         speaker.set_low().unwrap();
         delay.delay_us(1500);
-
 
     }
 }
