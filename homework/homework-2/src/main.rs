@@ -42,8 +42,6 @@ fn main() -> ! {
         .set_accel_mode_and_odr(&mut delay, AccelMode::Normal, AccelOutputDataRate::Hz400)
         .unwrap();
 
-    sensor.set_accel_scale(AccelScale::G16).unwrap();
-
     DISPLAY.init(display);
 
     let mut timer2 = Timer::new(board.TIMER0);
@@ -70,29 +68,39 @@ fn main() -> ! {
     ]);
 
     loop {
-        DISPLAY.with_lock(|display| display.show(&happy_image));
-        timer2.delay_ms(100u32);
 
         // determine the accelerometer is falling.
         if sensor.accel_status().unwrap().xyz_new_data() {
             let data = sensor.acceleration().unwrap();
-            rprintln!(
-                "Acceleration: x {} y {} z {}",
-                data.x_mg(),
-                data.y_mg(),
-                data.z_mg()
-            );
+
+            // convert the values from mG to G (1000 Mg to 1 G)
+            let mut x_value = data.x_mg();
+            let mut y_value = data.y_mg();
+            let mut z_value = data.z_mg();
+            
+            let acceleration_vector = i32::pow(x_value,2) + i32::pow(y_value,2) + i32::pow(z_value,2);
+
+            let is_it_falling: bool = (acceleration_vector/1000) < 250;
+
+            if is_it_falling {
+                rprintln!("Falling Detected: {}", is_it_falling);
+                
+                DISPLAY.with_lock(|display| display.show(&drop_image));
+                timer2.delay_ms(100u32);
+
+                for _ in 1..1000 {
+                    speaker.set_high().unwrap();
+                    delay.delay_us(500);
+                    speaker.set_low().unwrap();
+                    delay.delay_us(500);
+                }
+            } else {
+                DISPLAY.with_lock(|display| display.show(&happy_image));
+                timer2.delay_ms(100u32);
+            }
 
             DISPLAY.with_lock(|display| display.clear());
             timer2.delay_ms(100u32);
-
-            DISPLAY.with_lock(|display| display.show(&drop_image));
-            timer2.delay_ms(100u32);
-
-            speaker.set_high().unwrap();
-            delay.delay_us(500);
-            speaker.set_low().unwrap();
-            delay.delay_us(500);
         }
     }
 }
