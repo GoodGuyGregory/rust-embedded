@@ -73,13 +73,13 @@ fn main() -> ! {
         if sensor.accel_status().unwrap().xyz_new_data() {
             let data = sensor.acceleration().unwrap();
 
-            // convert the values from mG to G (1000 Mg to 1 G)
+            // obtain values from the sensor as milliGravities
             let mut x_value = data.x_mg();
             let mut y_value = data.y_mg();
             let mut z_value = data.z_mg();
             
             let acceleration_vector = i32::pow(x_value,2) + i32::pow(y_value,2) + i32::pow(z_value,2);
-
+            // converts to G's and compares to the 0.5 ^ 2 = [.25 * 1000] ~> 250 (compared to 1000)
             let is_it_falling: bool = (acceleration_vector/1000) < 250;
 
             if is_it_falling {
